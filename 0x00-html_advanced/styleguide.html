@@ -9,9 +9,7 @@
     <link rel="icon" type="image/png" href="./favicon.png" />
 </head>
 <body>
-    <header>
-        Header 
-    </header>
+    <header></header>
     <main>
         <section>
             <header>
@@ -75,7 +73,7 @@
             </header>
             <div>
                 <h3>Inline quote</h3>
-                <q>Stay hungry. Stay foolish</q>
+                <q>Stay hungry. Stay foolish.</q>
             </div>
             <div>
                 <h3>Blockquote</h3>
@@ -96,19 +94,17 @@
                     320 Stewart Avenue, Unit 12<br>
                     New York City NY 10001
                 </address>
-                <div>
-                    <pre>
-                        <code>
-                            <h2>My title</h2>
-                            <p>Proin lacus turpis, feugiat sit amet sollicitudin non, volutpat in libero. Aenean hendrerit ultrices nulla ac lobortis. Vestibulum consectetur nibh vel ante rhoncus faucibus.</p>
-                        </code>
-                    </pre>
-                </div>
-                <div>
-                    <p>
-                        Curabitur sit amet turpis cursus massa mollis highlighted. Duis finibus leo massa, eget dapibus erat finibus sed. Aenean condimentum sapien magna, eleifend <mark>highlighted</mark> mi consequat ut. Cras nec quam sed sapien ultricies <mark>highlighted</mark> ut sed metus.
-                    </p>
-                </div>
+            </div>
+            <div>
+                <pre>
+                    <code>
+                        <h2>My title</h2>
+                        <p>Proin lacus turpis, feugiat sit amet sollicitudin non, volutpat in libero. Aenean hendrerit ultrices nulla ac lobortis. Vestibulum consectetur nibh vel ante rhoncus faucibus.</p>
+                    </code>
+                </pre>
+            </div>
+            <div>
+                <p>Curabitur sit amet turpis cursus massa mollis <mark>highlighted</mark>. Duis finibus leo massa, eget dapibus erat finibus sed. Aenean condimentum sapien magna, eleifend <mark>highlighted</mark> mi consequat ut. Cras nec quam sed sapien ultricies <mark>highlighted</mark> ut sed metus.</p>
             </div>
         </section>
         <!-- Table -->
@@ -188,7 +184,9 @@
                 <h2>iframe</h2>
             </header>
             <div>
-                <iframe src="https://www.youtube.com/embed/41N6bKO-NVI" frameborder="0" title="Holberton School" width="350px" height="200px">
+                <iframe title="Holberton School"
+                width="350px" height="200px"
+                src="https://www.youtube.com/embed/41N6bKO-NVI">
                     Holberton Sally
                 </iframe>
             </div>

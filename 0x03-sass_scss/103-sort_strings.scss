@@ -26,9 +26,9 @@ $string-2: to-lower-case($string-2 + unquote(""));
                  abs($index-2) > length($list) {
       @return $list;
     }
-    $temp: nth($list, $index-a);
-    $list: set-nth($list, $index-a, nth($list, $index-b));
-    $list: set-nth($list, $index-b, $temp);
+    $temp: nth($list, $index-1);
+    $list: set-nth($list, $index-1, nth($list, $index-2));
+    $list: set-nth($list, $index-2, $temp);
     @return $list;
 }
 @function sort($list, $order) {

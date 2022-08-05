@@ -1,29 +1,29 @@
 /* Write a Sass file that sorts the variable $list_to_sort and prints the sorted list in the debug output. */
 @import './103-sort_list.scss';
 
-$sort-order: a b c d e f g h i j k l m n o p 
+$order: a b c d e f g h i j k l m n o p 
              q r s t u v w x y z !default;
-@function compare($string-a, $string-b, $sort-order) {
-$string-a: to-lower-case($string-a + unquote(""));
-$string-b: to-lower-case($string-b + unquote(""));      
+@function comparar($string-1, $string-2, $order) {
+$string-1: to-lower-case($string-1 + unquote(""));
+$string-2: to-lower-case($string-2 + unquote(""));      
 
 @for $i from 1 through min(
-        str-length($string-a), str-length($string-b)) {
+        str-length($string-1), str-length($string-2)) {
 
-    $char-a: str-slice($string-a, $i, $i);
-    $char-b: str-slice($string-b, $i, $i);
+    $char-1: str-slice($string-1, $i, $i);
+    $char-2: str-slice($string-2, $i, $i);
     
-    @if $char-a and $char-b and index(
-            $sort-order, $char-a) != index($sort-order, $char-b) {
+    @if $char-1 and $char-2 and index(
+            $order, $char-1) != index($order, $char-2) {
     @return index(
-            $sort-order, $char-a) < index($sort-order, $char-b);
+            $order, $char-1) < index($order, $char-2);
     }
 }
-@return str-length($string-a) < str-length($string-b);
+@return str-length($string-1) < str-length($string-2);
 }
-@function swap($list, $index-a, $index-b) {
-    @if abs($index-a) > length($list) or
-                 abs($index-b) > length($list) {
+@function swap($list, $index-1, $index-2) {
+    @if abs($index-1) > length($list) or
+                 abs($index-2) > length($list) {
       @return $list;
     }
     $temp: nth($list, $index-a);
@@ -31,16 +31,16 @@ $string-b: to-lower-case($string-b + unquote(""));
     $list: set-nth($list, $index-b, $temp);
     @return $list;
 }
-@function sort($list, $sort-order) {
+@function sort($list, $order) {
     @for $i from 1 through length($list) {
     @for $j from $i * -1 through -1 {
         $j: abs($j);
-        @if $j > 1 and compare(nth($list, $j),
-                    nth($list, $j - 1), $sort-order) {
+        @if $j > 1 and comparar(nth($list, $j),
+                    nth($list, $j - 1), $order) {
           $list: swap($list, $j, $j - 1);
         }
       }
     }
     @return $list;
 }
-@debug sort($list_to_sort, $sort-order);
+@debug sort($list_to_sort, $order);
